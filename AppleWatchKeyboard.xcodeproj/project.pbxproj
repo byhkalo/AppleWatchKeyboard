@@ -21,6 +21,10 @@
 		2ACCAB121C803254004B9831 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB111C803254004B9831 /* InterfaceController.m */; };
 		2ACCAB151C803254004B9831 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB141C803254004B9831 /* ExtensionDelegate.m */; };
 		2ACCAB171C803254004B9831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ACCAB161C803254004B9831 /* Assets.xcassets */; };
+		2ACCAB311C80338F004B9831 /* FileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2B1C80338F004B9831 /* FileReader.m */; };
+		2ACCAB321C80338F004B9831 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2D1C80338F004B9831 /* Node.m */; };
+		2ACCAB331C80338F004B9831 /* TopT9Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */; };
+		2ACCAB341C80338F004B9831 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB301C80338F004B9831 /* Tree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,13 @@
 		2ACCAB141C803254004B9831 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		2ACCAB161C803254004B9831 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ACCAB181C803254004B9831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ACCAB2A1C80338F004B9831 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
+		2ACCAB2B1C80338F004B9831 /* FileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileReader.m; sourceTree = "<group>"; };
+		2ACCAB2C1C80338F004B9831 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		2ACCAB2D1C80338F004B9831 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TopT9Words.txt; sourceTree = "<group>"; };
+		2ACCAB2F1C80338F004B9831 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		2ACCAB301C80338F004B9831 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,10 +207,25 @@
 				2ACCAB111C803254004B9831 /* InterfaceController.m */,
 				2ACCAB131C803254004B9831 /* ExtensionDelegate.h */,
 				2ACCAB141C803254004B9831 /* ExtensionDelegate.m */,
+				2ACCAB291C80338F004B9831 /* Vocabulary */,
 				2ACCAB161C803254004B9831 /* Assets.xcassets */,
 				2ACCAB181C803254004B9831 /* Info.plist */,
 			);
 			path = "AppleWatchKeyboard WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		2ACCAB291C80338F004B9831 /* Vocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				2ACCAB2A1C80338F004B9831 /* FileReader.h */,
+				2ACCAB2B1C80338F004B9831 /* FileReader.m */,
+				2ACCAB2C1C80338F004B9831 /* Node.h */,
+				2ACCAB2D1C80338F004B9831 /* Node.m */,
+				2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */,
+				2ACCAB2F1C80338F004B9831 /* Tree.h */,
+				2ACCAB301C80338F004B9831 /* Tree.m */,
+			);
+			path = Vocabulary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACCAB171C803254004B9831 /* Assets.xcassets in Resources */,
+				2ACCAB331C80338F004B9831 /* TopT9Words.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +411,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACCAB341C80338F004B9831 /* Tree.m in Sources */,
 				2ACCAB151C803254004B9831 /* ExtensionDelegate.m in Sources */,
 				2ACCAB121C803254004B9831 /* InterfaceController.m in Sources */,
+				2ACCAB311C80338F004B9831 /* FileReader.m in Sources */,
+				2ACCAB321C80338F004B9831 /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
