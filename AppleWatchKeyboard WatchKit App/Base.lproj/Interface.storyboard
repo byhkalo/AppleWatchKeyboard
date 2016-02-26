@@ -9,7 +9,68 @@
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
-                    <color key="backgroundColor" red="1" green="0.72945531880000003" blue="0.2326905276" alpha="1" colorSpace="calibratedRGB"/>
+                    <items>
+                        <group width="1" height="0.20000000000000001" alignment="left" id="ko1-B7-yUx">
+                            <items>
+                                <label height="1" alignment="left" text="TestText" id="2EC-NH-r7f"/>
+                            </items>
+                        </group>
+                        <group width="1" height="27" alignment="left" id="Xbs-7v-BDB">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title=".,?" id="HzV-Y4-NJu">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="abc" id="CJn-2E-p8x">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="def" id="5kh-Tg-V6K">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.20000000000000001" alignment="left" id="j8z-fh-3Uy">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="ghi" id="Iv7-OK-gxR">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="jkl" id="kdN-dv-SNx">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="mno" id="BF1-ya-lef">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.20000000000000001" alignment="left" id="cV3-pf-6FK">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="pqrs" id="SBv-Wz-0cN">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="tuv" id="zl1-fJ-35s">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="wxyz" id="zit-gd-MBj">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.20000000000000001" alignment="left" id="9iG-dz-Ihd">
+                            <items>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="⌫" id="3X7-Fd-dLZ">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="_" id="wDK-do-QnG">
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button width="0.33300000000000002" height="1" alignment="left" title="Send" id="yJv-SU-t9P">
+                                    <color key="titleColor" red="0.094117647060000004" green="1" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.094117647060000004" green="0.25136194690000002" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </controller>
             </objects>
         </scene>
