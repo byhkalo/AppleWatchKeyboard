@@ -7,9 +7,26 @@
 //
 
 #import "InterfaceController.h"
+#import "Tree.h"
+#import "FileReader.h"
 
+typedef enum {
+    KBSignDecimalABC = 2,
+    KBSignDecimalDEF = 3,
+    KBSignDecimalGHI = 4,
+    KBSignDecimalJKL = 5,
+    KBSignDecimalMNO = 6,
+    KBSignDecimalPQRS = 7,
+    KBSignDecimalTUV = 8,
+    KBSignDecimalWXYZ = 9
+} KBSignDecimal;
 
 @interface InterfaceController()
+@property (nonatomic, assign) NSInteger predictionCount;
+@property (nonatomic, strong) NSMutableArray *array;
+@property (nonatomic, strong) NSString *predictedWord;
+@property (nonatomic, strong) NSString *buttonPattern;
+@property (nonatomic, strong) NSString *realText;
 
 @end
 
@@ -30,6 +47,67 @@
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+#pragma mark -
+#pragma mark Private Methods -
+
+- (void)parseData {
+    self.array = [NSMutableArray array];
+    NSString* filePath = @"TopT9Words";//file path...
+    NSString* fileRoot = [[NSBundle mainBundle]
+                          pathForResource:filePath ofType:@"txt"];
+    FileReader * reader = [[FileReader alloc] initWithFilePath:fileRoot];
+    NSString * line = nil;
+    while ((line = [reader readLine])) {
+        line = [line stringByReplacingOccurrencesOfString:@" "
+                                               withString:@""];
+        NSMutableArray *lineArray = (NSMutableArray *)[line componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        
+        self.array = lineArray;
+    }
+    
+}
+
+#pragma mark -
+#pragma mark Setters -
+
+- (void)setRealText:(NSString *)realText {
+    _realText = realText;
+    [self.textLabel setText:realText];
+}
+
+#pragma mark -
+#pragma mark TreeDelegate -
+
+- (void)predictionCountReset {
+    self.predictionCount = 0;
+}
+
+- (void)buttonPatternReset {
+    self.buttonPattern = @"";
+    self.predictionCount = 0;
+    self.predictedWord = @"";
+}
+
+#pragma mark -
+#pragma mark Action Button -
+
+- (void)signButtonPressedDecimalNumber:(NSInteger)number {
+    self.buttonPattern = [self.buttonPattern stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)number]];
+    self.predictedWord = [mTree getWordFromPattern:self.buttonPattern andPredictionCount:self.predictionCount];
+    if ([self.predictedWord isEqualToString:@""]) {
+        self.realText = @" ";
+    }
+    self.textLabel.text = self.predictedWord;
+    if (self.buttonPattern.length == 0) {
+        self.predictedWord = @"";
+        self.realText = @" ";
+    }
+    //if (predictionCount == 0) {
+    self.realText = self.predictedWord;
+    // }
+    
 }
 
 - (IBAction)punctuationButtonPressed {
