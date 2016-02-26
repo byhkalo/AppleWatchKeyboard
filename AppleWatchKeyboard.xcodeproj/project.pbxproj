@@ -25,6 +25,7 @@
 		2ACCAB321C80338F004B9831 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2D1C80338F004B9831 /* Node.m */; };
 		2ACCAB331C80338F004B9831 /* TopT9Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */; };
 		2ACCAB341C80338F004B9831 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB301C80338F004B9831 /* Tree.m */; };
+		2ACCAB381C8056C8004B9831 /* KBWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB371C8056C8004B9831 /* KBWordModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TopT9Words.txt; sourceTree = "<group>"; };
 		2ACCAB2F1C80338F004B9831 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
 		2ACCAB301C80338F004B9831 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
+		2ACCAB361C8056C8004B9831 /* KBWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBWordModel.h; sourceTree = "<group>"; };
+		2ACCAB371C8056C8004B9831 /* KBWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBWordModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,7 @@
 				2ACCAB111C803254004B9831 /* InterfaceController.m */,
 				2ACCAB131C803254004B9831 /* ExtensionDelegate.h */,
 				2ACCAB141C803254004B9831 /* ExtensionDelegate.m */,
+				2ACCAB351C8056AF004B9831 /* Models */,
 				2ACCAB291C80338F004B9831 /* Vocabulary */,
 				2ACCAB161C803254004B9831 /* Assets.xcassets */,
 				2ACCAB181C803254004B9831 /* Info.plist */,
@@ -226,6 +230,15 @@
 				2ACCAB301C80338F004B9831 /* Tree.m */,
 			);
 			path = Vocabulary;
+			sourceTree = "<group>";
+		};
+		2ACCAB351C8056AF004B9831 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2ACCAB361C8056C8004B9831 /* KBWordModel.h */,
+				2ACCAB371C8056C8004B9831 /* KBWordModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACCAB381C8056C8004B9831 /* KBWordModel.m in Sources */,
 				2ACCAB341C80338F004B9831 /* Tree.m in Sources */,
 				2ACCAB151C803254004B9831 /* ExtensionDelegate.m in Sources */,
 				2ACCAB121C803254004B9831 /* InterfaceController.m in Sources */,
