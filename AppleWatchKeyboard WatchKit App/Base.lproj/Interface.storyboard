@@ -19,12 +19,21 @@
                             <items>
                                 <button width="0.33300000000000002" height="1" alignment="left" title=".,?" id="HzV-Y4-NJu">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="punctuationButtonPressed" destination="AgC-eL-Hgc" id="2DD-e1-Wy1"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="abc" id="CJn-2E-p8x">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="abcButtonPressed" destination="AgC-eL-Hgc" id="W39-tG-DAG"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="def" id="5kh-Tg-V6K">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="defButtonPressed" destination="AgC-eL-Hgc" id="G09-y7-CEb"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
@@ -32,12 +41,21 @@
                             <items>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="ghi" id="Iv7-OK-gxR">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="ghiButtonPressed" destination="AgC-eL-Hgc" id="XoU-L3-jLT"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="jkl" id="kdN-dv-SNx">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="jklButtonPressed" destination="AgC-eL-Hgc" id="67T-wJ-mRW"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="mno" id="BF1-ya-lef">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="mnoButtonPressed" destination="AgC-eL-Hgc" id="gsg-aC-oj2"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
@@ -45,12 +63,21 @@
                             <items>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="pqrs" id="SBv-Wz-0cN">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="pqrsButtonPressed" destination="AgC-eL-Hgc" id="XcU-LK-sVH"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="tuv" id="zl1-fJ-35s">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="tuvButtonPressed" destination="AgC-eL-Hgc" id="qB4-J2-AiC"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="wxyz" id="zit-gd-MBj">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="wxyzButtonPressed" destination="AgC-eL-Hgc" id="T5H-RZ-Hp5"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
@@ -58,19 +85,31 @@
                             <items>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="⌫" id="3X7-Fd-dLZ">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="backSpaceButtonPressed" destination="AgC-eL-Hgc" id="7v7-7b-rYF"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="_" id="wDK-do-QnG">
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="spaseButtonPressed" destination="AgC-eL-Hgc" id="bUp-sO-Taw"/>
+                                    </connections>
                                 </button>
                                 <button width="0.33300000000000002" height="1" alignment="left" title="Send" id="yJv-SU-t9P">
                                     <color key="titleColor" red="0.094117647060000004" green="1" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.094117647060000004" green="0.25136194690000002" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="sendButtonPressed" destination="AgC-eL-Hgc" id="DBI-xj-o9Y"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="textLabel" destination="2EC-NH-r7f" id="5XS-wt-Gw8"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>
