@@ -21,7 +21,7 @@ typedef enum {
     KBSignDecimalWXYZ = 9
 } KBSignDecimal;
 
-@interface InterfaceController()
+@interface InterfaceController() <TreeDelegate>
 @property (nonatomic, assign) NSInteger predictionCount;
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) NSString *predictedWord;
@@ -35,8 +35,19 @@ typedef enum {
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
     // Configure interface objects here.
+    
+        self.predictedWord = [[NSString alloc]init];
+        self.buttonPattern = [[NSString alloc]init];
+        self.predictionCount = 0;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+            [self parseData];
+            Tree *tree = [Tree getSharedInstance];
+            for (NSString *string in self.array) {
+                [tree addString:string];
+            }
+            tree.delegate = self;
+    });
 }
 
 - (void)willActivate {
@@ -53,20 +64,23 @@ typedef enum {
 #pragma mark Private Methods -
 
 - (void)parseData {
-    self.array = [NSMutableArray array];
-    NSString* filePath = @"TopT9Words";//file path...
-    NSString* fileRoot = [[NSBundle mainBundle]
-                          pathForResource:filePath ofType:@"txt"];
-    FileReader * reader = [[FileReader alloc] initWithFilePath:fileRoot];
-    NSString * line = nil;
-    while ((line = [reader readLine])) {
-        line = [line stringByReplacingOccurrencesOfString:@" "
-                                               withString:@""];
-        NSMutableArray *lineArray = (NSMutableArray *)[line componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-        
-        self.array = lineArray;
-    }
     
+        self.array = [NSMutableArray array];
+        NSString* filePath = @"TopT9Words";//file path...
+        NSString* fileRoot = [[NSBundle mainBundle]
+                              pathForResource:filePath ofType:@"txt"];
+        FileReader * reader = [[FileReader alloc] initWithFilePath:fileRoot];
+        __block NSString * line = nil;
+    
+//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+    while ((line = [reader readLine])) {
+            line = [line stringByReplacingOccurrencesOfString:@" "
+                                                   withString:@""];
+            NSMutableArray *lineArray = (NSMutableArray *)[line componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+            
+            self.array = lineArray;
+        }
+//    });
 }
 
 #pragma mark -
@@ -107,7 +121,6 @@ typedef enum {
     //if (predictionCount == 0) {
     self.realText = self.predictedWord;
     // }
-    
 }
 
 - (IBAction)punctuationButtonPressed {
