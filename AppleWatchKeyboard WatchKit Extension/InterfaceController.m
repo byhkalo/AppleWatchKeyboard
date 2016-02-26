@@ -9,6 +9,7 @@
 #import "InterfaceController.h"
 #import "Tree.h"
 #import "FileReader.h"
+#import "KBWordModel.h"
 
 typedef enum {
     KBSignDecimalABC = 2,
@@ -22,11 +23,12 @@ typedef enum {
 } KBSignDecimal;
 
 @interface InterfaceController() <TreeDelegate>
-@property (nonatomic, assign) NSInteger predictionCount;
-@property (nonatomic, strong) NSMutableArray *array;
-@property (nonatomic, strong) NSString *predictedWord;
-@property (nonatomic, strong) NSString *buttonPattern;
-@property (nonatomic, strong) NSString *realText;
+//@property (nonatomic, assign) NSInteger predictionCount; //count of finding iteraction. Example: ball - call
+@property (nonatomic, strong) NSMutableArray *array; //vocabulary array with words
+//@property (nonatomic, strong) NSString *predictedWord; //finding word. Example: he - hel - hell - hello
+//@property (nonatomic, strong) NSString *buttonPattern; //number code for word. Example: 43556 (word "hello")
+@property (nonatomic, strong) NSString *realText; //text visible for user in textLabel
+@property (nonatomic, strong) NSMutableArray *wordModelsArray;
 
 @end
 
@@ -37,16 +39,17 @@ typedef enum {
     [super awakeWithContext:context];
     // Configure interface objects here.
     
-        self.predictedWord = [[NSString alloc]init];
-        self.buttonPattern = [[NSString alloc]init];
-        self.predictionCount = 0;
+    self.wordModelsArray = [NSMutableArray array];
+    KBWordModel *wordModel = [[KBWordModel alloc] initWithPredictionWord:@"" pattern:@"" count:0];
+    [self.wordModelsArray addObject:wordModel];
+    
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-            [self parseData];
-            Tree *tree = [Tree getSharedInstance];
-            for (NSString *string in self.array) {
-                [tree addString:string];
-            }
-            tree.delegate = self;
+        [self parseData];
+        Tree *tree = [Tree getSharedInstance];
+        for (NSString *string in self.array) {
+            [tree addString:string];
+        }
+        tree.delegate = self;
     });
 }
 
@@ -64,23 +67,26 @@ typedef enum {
 #pragma mark Private Methods -
 
 - (void)parseData {
-    
         self.array = [NSMutableArray array];
         NSString* filePath = @"TopT9Words";//file path...
         NSString* fileRoot = [[NSBundle mainBundle]
                               pathForResource:filePath ofType:@"txt"];
         FileReader * reader = [[FileReader alloc] initWithFilePath:fileRoot];
-        __block NSString * line = nil;
-    
-//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-    while ((line = [reader readLine])) {
+        NSString * line = nil;
+        while ((line = [reader readLine])) {
             line = [line stringByReplacingOccurrencesOfString:@" "
                                                    withString:@""];
             NSMutableArray *lineArray = (NSMutableArray *)[line componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            
             self.array = lineArray;
         }
-//    });
+}
+
+- (void)reloadText {
+    NSMutableArray *mutTextArray = [NSMutableArray array];
+    for (KBWordModel *wordModel in self.wordModelsArray) {
+        [mutTextArray addObject:[wordModel.predictedWord copy]];
+    }
+    self.realText = [mutTextArray componentsJoinedByString:@" "];
 }
 
 #pragma mark -
@@ -95,32 +101,47 @@ typedef enum {
 #pragma mark TreeDelegate -
 
 - (void)predictionCountReset {
-    self.predictionCount = 0;
+//    self.predictionCount = 0;
 }
 
 - (void)buttonPatternReset {
-    self.buttonPattern = @"";
-    self.predictionCount = 0;
-    self.predictedWord = @"";
+//    self.buttonPattern = @"";
+//    self.predictionCount = 0;
+//    self.predictedWord = @"";
 }
 
 #pragma mark -
 #pragma mark Action Button -
 
 - (void)signButtonPressedDecimalNumber:(NSInteger)number {
-    self.buttonPattern = [self.buttonPattern stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)number]];
-    self.predictedWord = [mTree getWordFromPattern:self.buttonPattern andPredictionCount:self.predictionCount];
-    if ([self.predictedWord isEqualToString:@""]) {
+    KBWordModel *wordModel = [self.wordModelsArray lastObject];
+    
+    NSString *pattern = wordModel.buttonPattern;
+    NSString *predictedWord = wordModel.predictedWord;
+    NSInteger predictedCount = wordModel.predictionCount;
+    
+    //create word-code
+    pattern = [pattern stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)number]];
+    NSString *newWord = [mTree getWordFromPattern:pattern andPredictionCount:predictedCount];
+    //get true word by word-code and number of finding iteraction
+    
+    
+    // if can find word
+    if (![newWord isEqualToString:@"No Prediction"]) {
+        predictedWord = newWord;
+    }else {
+        pattern = [pattern substringToIndex:(pattern.length - 2)];
+    }
+    
+    if (pattern.length == 0) {
+        predictedWord = @"";
         self.realText = @" ";
     }
-    self.textLabel.text = self.predictedWord;
-    if (self.buttonPattern.length == 0) {
-        self.predictedWord = @"";
-        self.realText = @" ";
-    }
-    //if (predictionCount == 0) {
-    self.realText = self.predictedWord;
-    // }
+    
+    wordModel.buttonPattern = pattern;
+    wordModel.predictedWord = predictedWord;
+    wordModel.predictionCount = predictedCount;
+    [self reloadText];
 }
 
 - (IBAction)punctuationButtonPressed {
@@ -153,11 +174,50 @@ typedef enum {
 
 
 - (IBAction)backSpaceButtonPressed {
-    NSString *text = self.realText;
-    self.realText = [text substringToIndex:(text.length-2)];
+    NSMutableArray *wordModelsArray = self.wordModelsArray;
+    KBWordModel *wordModel = [wordModelsArray lastObject];
+    
+    switch (wordModel.predictedWord.length) {
+        case 0:
+            if (wordModelsArray.count > 1) {
+                [wordModelsArray removeLastObject];
+                [self reloadText];
+                break;
+            }
+        case 1:
+            wordModel.predictedWord = @"";
+            wordModel.buttonPattern = @"";
+            wordModel.predictionCount = 0;
+            [self reloadText];
+            break;
+            
+        default: {
+            NSString *text = wordModel.buttonPattern;
+            text = [text substringToIndex:(text.length-1)];
+            NSInteger numberReWrite = [[text substringFromIndex:(text.length - 1)] integerValue];
+            text = [text substringToIndex:(text.length-1)];
+            
+            wordModel.buttonPattern = text;
+            [self signButtonPressedDecimalNumber:numberReWrite];
+            break;
+        }
+    }
 }
 
+
 - (IBAction)spaseButtonPressed {
+    KBWordModel *wordModel = [self.wordModelsArray lastObject];
+    switch (wordModel.predictedWord.length) {
+        case 0:
+            break;
+            
+        default: {
+            KBWordModel *wordModel = [[KBWordModel alloc] initWithPredictionWord:@"" pattern:@"" count:0];
+            [self.wordModelsArray addObject:wordModel];
+            break;
+        }
+    }
+    [self reloadText];
 }
 
 - (IBAction)sendButtonPressed {
