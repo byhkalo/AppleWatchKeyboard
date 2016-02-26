@@ -32,6 +32,46 @@
     [super didDeactivate];
 }
 
+- (IBAction)punctuationButtonPressed {
+    
+}
+- (IBAction)abcButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalABC];
+}
+- (IBAction)defButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalDEF];
+}
+- (IBAction)ghiButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalGHI];
+}
+- (IBAction)jklButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalJKL];
+}
+- (IBAction)mnoButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalMNO];
+}
+- (IBAction)pqrsButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalPQRS];
+}
+- (IBAction)tuvButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalTUV];
+}
+- (IBAction)wxyzButtonPressed {
+    [self signButtonPressedDecimalNumber:KBSignDecimalWXYZ];
+}
+
+
+- (IBAction)backSpaceButtonPressed {
+    NSString *text = self.realText;
+    self.realText = [text substringToIndex:(text.length-2)];
+}
+
+- (IBAction)spaseButtonPressed {
+}
+
+- (IBAction)sendButtonPressed {
+}
+
 @end
 
 
