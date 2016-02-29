@@ -44,12 +44,29 @@ typedef enum {
     [self.wordModelsArray addObject:wordModel];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+//    dispatch_async(dispatch_get_main_queue(), ^(void){
         [self parseData];
         Tree *tree = [Tree getSharedInstance];
         for (NSString *string in self.array) {
-            [tree addString:string];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
+                if ([self.array.lastObject isEqualToString:string]) {
+                    dispatch_async(dispatch_get_main_queue(), ^(void){
+                        self.textLabel.text = @"End Last String";
+                    });
+                }
+                [tree addString:string];
+            });
+            if ([self.array.lastObject isEqualToString:string]) {
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    self.textLabel.text = @"End addStrings 2222";
+                });
+            }
         }
+        
         tree.delegate = self;
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            self.textLabel.text = @"End addStrings 1111";
+        });
     });
 }
 
@@ -67,6 +84,9 @@ typedef enum {
 #pragma mark Private Methods -
 
 - (void)parseData {
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        self.textLabel.text = @"Start ParseData";
+    });
         self.array = [NSMutableArray array];
         NSString* filePath = @"TopT9Words";//file path...
         NSString* fileRoot = [[NSBundle mainBundle]
@@ -79,6 +99,9 @@ typedef enum {
             NSMutableArray *lineArray = (NSMutableArray *)[line componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
             self.array = lineArray;
         }
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        self.textLabel.text = @"End ParseData";
+    });
 }
 
 - (void)reloadText {
@@ -114,34 +137,35 @@ typedef enum {
 #pragma mark Action Button -
 
 - (void)signButtonPressedDecimalNumber:(NSInteger)number {
-    KBWordModel *wordModel = [self.wordModelsArray lastObject];
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
     
-    NSString *pattern = wordModel.buttonPattern;
-    NSString *predictedWord = wordModel.predictedWord;
-    NSInteger predictedCount = wordModel.predictionCount;
-    
-    //create word-code
-    pattern = [pattern stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)number]];
-    NSString *newWord = [mTree getWordFromPattern:pattern andPredictionCount:predictedCount];
-    //get true word by word-code and number of finding iteraction
-    
-    
-    // if can find word
-    if (![newWord isEqualToString:@"No Prediction"]) {
-        predictedWord = newWord;
-    }else {
-        pattern = [pattern substringToIndex:(pattern.length - 2)];
-    }
-    
-    if (pattern.length == 0) {
-        predictedWord = @"";
-        self.realText = @" ";
-    }
-    
-    wordModel.buttonPattern = pattern;
-    wordModel.predictedWord = predictedWord;
-    wordModel.predictionCount = predictedCount;
-    [self reloadText];
+        KBWordModel *wordModel = [self.wordModelsArray lastObject];
+        
+        NSString *pattern = wordModel.buttonPattern;
+        NSString *predictedWord = wordModel.predictedWord;
+        NSInteger predictedCount = wordModel.predictionCount;
+        
+        //create word-code
+        pattern = [pattern stringByAppendingString:[NSString stringWithFormat:@"%ld",(long)number]];
+        NSString *newWord = [[Tree getSharedInstance] getWordFromPattern:pattern andPredictionCount:predictedCount];
+        //get true word by word-code and number of finding iteraction
+        
+        
+        // if can find word
+        if (![newWord isEqualToString:@"No Prediction"]) {
+            predictedWord = newWord;
+        }else {
+            pattern = [pattern substringToIndex:(pattern.length - 2)];
+        }
+        
+        wordModel.buttonPattern = pattern;
+        wordModel.predictedWord = predictedWord;
+        wordModel.predictionCount = predictedCount;
+        
+//        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self reloadText];
+//        });
+//    });
 }
 
 - (IBAction)punctuationButtonPressed {
