@@ -15,7 +15,7 @@
                                 <label height="1" alignment="left" text="TestText" id="2EC-NH-r7f"/>
                             </items>
                         </group>
-                        <group width="1" height="27" alignment="left" id="Xbs-7v-BDB">
+                        <group width="1" height="0.20000000000000001" alignment="left" id="Xbs-7v-BDB">
                             <items>
                                 <button width="0.33300000000000002" height="1" alignment="left" title=".,?" id="HzV-Y4-NJu">
                                     <fontDescription key="font" type="system" pointSize="13"/>
@@ -112,6 +112,7 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="577" y="479"/>
         </scene>
     </scenes>
 </document>
