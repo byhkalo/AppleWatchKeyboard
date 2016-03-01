@@ -22,7 +22,7 @@ typedef enum {
     KBSignDecimalWXYZ = 9
 } KBSignDecimal;
 
-@interface InterfaceController() <TreeDelegate>
+@interface InterfaceController() <TreeDelegate, WCSessionDelegate>
 //@property (nonatomic, assign) NSInteger predictionCount; //count of finding iteraction. Example: ball - call
 @property (nonatomic, strong) NSMutableArray *array; //vocabulary array with words
 //@property (nonatomic, strong) NSString *predictedWord; //finding word. Example: he - hel - hell - hello
@@ -31,11 +31,24 @@ typedef enum {
 @property (nonatomic, strong) NSMutableArray *wordModelsArray;
 
 @property (nonatomic, assign) BOOL isCanWrite;
+@property (nonatomic, strong) WCSession *session;
 
 @end
 
 
 @implementation InterfaceController
+
+-(instancetype)init {
+    self = [super init];
+    if (self) {
+        if ([WCSession isSupported]) {
+            self.session = [WCSession defaultSession];
+            self.session.delegate = self;
+            [self.session activateSession];
+        }
+    }
+    return self;
+}
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
@@ -237,6 +250,11 @@ typedef enum {
 
 - (IBAction)sendButtonPressed {
 }
+
+#pragma mark -
+#pragma mark WCSessionDelegate -
+
+
 
 @end
 
