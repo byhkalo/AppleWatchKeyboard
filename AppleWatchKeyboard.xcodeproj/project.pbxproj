@@ -26,6 +26,7 @@
 		2ACCAB331C80338F004B9831 /* TopT9Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */; };
 		2ACCAB341C80338F004B9831 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB301C80338F004B9831 /* Tree.m */; };
 		2ACCAB381C8056C8004B9831 /* KBWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB371C8056C8004B9831 /* KBWordModel.m */; };
+		2AD18F161C859DC700D1885C /* KBWatchDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD18F151C859DC700D1885C /* KBWatchDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		2ACCAB301C80338F004B9831 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 		2ACCAB361C8056C8004B9831 /* KBWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBWordModel.h; sourceTree = "<group>"; };
 		2ACCAB371C8056C8004B9831 /* KBWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBWordModel.m; sourceTree = "<group>"; };
+		2AD18F141C859DC700D1885C /* KBWatchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBWatchDelegate.h; path = Delegates/KBWatchDelegate.h; sourceTree = "<group>"; };
+		2AD18F151C859DC700D1885C /* KBWatchDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBWatchDelegate.m; path = Delegates/KBWatchDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				2ACCAAE11C803254004B9831 /* AppDelegate.m */,
 				2ACCAAE31C803254004B9831 /* ViewController.h */,
 				2ACCAAE41C803254004B9831 /* ViewController.m */,
+				2AD18F141C859DC700D1885C /* KBWatchDelegate.h */,
+				2AD18F151C859DC700D1885C /* KBWatchDelegate.m */,
 				2ACCAAE61C803254004B9831 /* Main.storyboard */,
 				2ACCAAE91C803254004B9831 /* Assets.xcassets */,
 				2ACCAAEB1C803254004B9831 /* LaunchScreen.storyboard */,
@@ -409,6 +414,7 @@
 				2ACCAAE51C803254004B9831 /* ViewController.m in Sources */,
 				2ACCAAE21C803254004B9831 /* AppDelegate.m in Sources */,
 				2ACCAADF1C803254004B9831 /* main.m in Sources */,
+				2AD18F161C859DC700D1885C /* KBWatchDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +696,7 @@
 				2ACCAB1D1C803254004B9831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2ACCAB1F1C803254004B9831 /* Build configuration list for PBXNativeTarget "AppleWatchKeyboard WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -698,6 +705,7 @@
 				2ACCAB211C803254004B9831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2ACCAB231C803254004B9831 /* Build configuration list for PBXNativeTarget "AppleWatchKeyboard" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +714,7 @@
 				2ACCAB251C803254004B9831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2ACCAB261C803254004B9831 /* Build configuration list for PBXNativeTarget "AppleWatchKeyboardTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +723,7 @@
 				2ACCAB281C803254004B9831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

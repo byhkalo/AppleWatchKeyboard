@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "KBWatchDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <WCSessionDelegate>
+
+@property (nonatomic, strong) KBWatchDelegate *watchDelegate;
 
 @end
 
@@ -17,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.watchDelegate = [[KBWatchDelegate alloc] initWithSession:[WCSession defaultSession]];
+    
     return YES;
 }
 
