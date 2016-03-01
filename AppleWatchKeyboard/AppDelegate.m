@@ -8,10 +8,12 @@
 
 #import "AppDelegate.h"
 #import "KBWatchDelegate.h"
+#import "Tree.h"
+#import "FileReader.h"
 
 @interface AppDelegate () <WCSessionDelegate>
-
 @property (nonatomic, strong) KBWatchDelegate *watchDelegate;
+@property (nonatomic, strong) NSMutableArray *array;
 
 @end
 
@@ -20,8 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self loadVocabulary];
     self.watchDelegate = [[KBWatchDelegate alloc] initWithSession:[WCSession defaultSession]];
-    
     return YES;
 }
 
@@ -46,5 +48,36 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)loadVocabulary {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        [self parseData];
+        Tree *tree = [Tree getSharedInstance];
+        for (NSString *string in self.array) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+                [tree addString:string];
+                if ([self.array.lastObject isEqual:string]) {
+                }
+            });
+        }
+//        tree.delegate = self;
+    });
+}
+
+- (void)parseData {
+    self.array = [NSMutableArray array];
+    NSString* filePath = @"TopT9Words";//file path...
+    NSString* fileRoot = [[NSBundle mainBundle]
+                          pathForResource:filePath ofType:@"txt"];
+    FileReader * reader = [[FileReader alloc] initWithFilePath:fileRoot];
+    NSString * line = nil;
+    while ((line = [reader readLine])) {
+        line = [line stringByReplacingOccurrencesOfString:@" "
+                                               withString:@""];
+        NSMutableArray *lineArray = (NSMutableArray *)[line componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        self.array = lineArray;
+    }
+}
+
 
 @end
