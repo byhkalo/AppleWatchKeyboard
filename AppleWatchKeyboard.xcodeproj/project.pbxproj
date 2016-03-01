@@ -170,8 +170,7 @@
 				2ACCAAE11C803254004B9831 /* AppDelegate.m */,
 				2ACCAAE31C803254004B9831 /* ViewController.h */,
 				2ACCAAE41C803254004B9831 /* ViewController.m */,
-				2AD18F141C859DC700D1885C /* KBWatchDelegate.h */,
-				2AD18F151C859DC700D1885C /* KBWatchDelegate.m */,
+				2AF75D231C85DDAC0027DB77 /* Delegates */,
 				2ACCAAE61C803254004B9831 /* Main.storyboard */,
 				2ACCAAE91C803254004B9831 /* Assets.xcassets */,
 				2ACCAAEB1C803254004B9831 /* LaunchScreen.storyboard */,
@@ -244,6 +243,15 @@
 				2ACCAB371C8056C8004B9831 /* KBWordModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2AF75D231C85DDAC0027DB77 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				2AD18F141C859DC700D1885C /* KBWatchDelegate.h */,
+				2AD18F151C859DC700D1885C /* KBWatchDelegate.m */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

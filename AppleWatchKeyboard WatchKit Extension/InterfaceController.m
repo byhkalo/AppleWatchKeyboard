@@ -45,8 +45,6 @@ typedef enum {
     KBWordModel *wordModel = [[KBWordModel alloc] initWithPredictionWord:@"" pattern:@"" count:0];
     [self.wordModelsArray addObject:wordModel];
     
-    [WKInterfaceController ];
-    
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
 //    dispatch_async(dispatch_get_main_queue(), ^(void){
         [self parseData];
@@ -127,7 +125,7 @@ typedef enum {
 }
 
 #pragma mark -
-#pragma mark Action Button -
+#pragma mark Find word in Vocabulary -
 
 - (void)signButtonPressedDecimalNumber:(NSInteger)number {
     if (!self.isCanWrite) {
@@ -157,6 +155,9 @@ typedef enum {
     wordModel.predictionCount = predictedCount;
     [self reloadText];
 }
+
+#pragma mark -
+#pragma mark Action Button -
 
 - (IBAction)punctuationButtonPressed {
     
