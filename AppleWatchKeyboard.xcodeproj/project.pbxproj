@@ -21,12 +21,13 @@
 		2ACCAB121C803254004B9831 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB111C803254004B9831 /* InterfaceController.m */; };
 		2ACCAB151C803254004B9831 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB141C803254004B9831 /* ExtensionDelegate.m */; };
 		2ACCAB171C803254004B9831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ACCAB161C803254004B9831 /* Assets.xcassets */; };
-		2ACCAB311C80338F004B9831 /* FileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2B1C80338F004B9831 /* FileReader.m */; };
-		2ACCAB321C80338F004B9831 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2D1C80338F004B9831 /* Node.m */; };
-		2ACCAB331C80338F004B9831 /* TopT9Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */; };
-		2ACCAB341C80338F004B9831 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB301C80338F004B9831 /* Tree.m */; };
 		2ACCAB381C8056C8004B9831 /* KBWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACCAB371C8056C8004B9831 /* KBWordModel.m */; };
 		2AD18F161C859DC700D1885C /* KBWatchDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD18F151C859DC700D1885C /* KBWatchDelegate.m */; };
+		2AF75D2D1C85DF150027DB77 /* FileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF75D261C85DF150027DB77 /* FileReader.m */; };
+		2AF75D2E1C85DF150027DB77 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF75D281C85DF150027DB77 /* Node.m */; };
+		2AF75D2F1C85DF150027DB77 /* Original_TopT9Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2AF75D291C85DF150027DB77 /* Original_TopT9Words.txt */; };
+		2AF75D301C85DF150027DB77 /* TopT9Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2AF75D2A1C85DF150027DB77 /* TopT9Words.txt */; };
+		2AF75D311C85DF150027DB77 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF75D2C1C85DF150027DB77 /* Tree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,17 +104,18 @@
 		2ACCAB141C803254004B9831 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		2ACCAB161C803254004B9831 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ACCAB181C803254004B9831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2ACCAB2A1C80338F004B9831 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
-		2ACCAB2B1C80338F004B9831 /* FileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileReader.m; sourceTree = "<group>"; };
-		2ACCAB2C1C80338F004B9831 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		2ACCAB2D1C80338F004B9831 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
-		2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TopT9Words.txt; sourceTree = "<group>"; };
-		2ACCAB2F1C80338F004B9831 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
-		2ACCAB301C80338F004B9831 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 		2ACCAB361C8056C8004B9831 /* KBWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBWordModel.h; sourceTree = "<group>"; };
 		2ACCAB371C8056C8004B9831 /* KBWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBWordModel.m; sourceTree = "<group>"; };
 		2AD18F141C859DC700D1885C /* KBWatchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBWatchDelegate.h; path = Delegates/KBWatchDelegate.h; sourceTree = "<group>"; };
 		2AD18F151C859DC700D1885C /* KBWatchDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBWatchDelegate.m; path = Delegates/KBWatchDelegate.m; sourceTree = "<group>"; };
+		2AF75D251C85DF150027DB77 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileReader.h; sourceTree = "<group>"; };
+		2AF75D261C85DF150027DB77 /* FileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileReader.m; sourceTree = "<group>"; };
+		2AF75D271C85DF150027DB77 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		2AF75D281C85DF150027DB77 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		2AF75D291C85DF150027DB77 /* Original_TopT9Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Original_TopT9Words.txt; sourceTree = "<group>"; };
+		2AF75D2A1C85DF150027DB77 /* TopT9Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TopT9Words.txt; sourceTree = "<group>"; };
+		2AF75D2B1C85DF150027DB77 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		2AF75D2C1C85DF150027DB77 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				2ACCAAE31C803254004B9831 /* ViewController.h */,
 				2ACCAAE41C803254004B9831 /* ViewController.m */,
 				2AF75D231C85DDAC0027DB77 /* Delegates */,
+				2AF75D241C85DF150027DB77 /* Vocabulary */,
 				2ACCAAE61C803254004B9831 /* Main.storyboard */,
 				2ACCAAE91C803254004B9831 /* Assets.xcassets */,
 				2ACCAAEB1C803254004B9831 /* LaunchScreen.storyboard */,
@@ -215,25 +218,10 @@
 				2ACCAB131C803254004B9831 /* ExtensionDelegate.h */,
 				2ACCAB141C803254004B9831 /* ExtensionDelegate.m */,
 				2ACCAB351C8056AF004B9831 /* Models */,
-				2ACCAB291C80338F004B9831 /* Vocabulary */,
 				2ACCAB161C803254004B9831 /* Assets.xcassets */,
 				2ACCAB181C803254004B9831 /* Info.plist */,
 			);
 			path = "AppleWatchKeyboard WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		2ACCAB291C80338F004B9831 /* Vocabulary */ = {
-			isa = PBXGroup;
-			children = (
-				2ACCAB2A1C80338F004B9831 /* FileReader.h */,
-				2ACCAB2B1C80338F004B9831 /* FileReader.m */,
-				2ACCAB2C1C80338F004B9831 /* Node.h */,
-				2ACCAB2D1C80338F004B9831 /* Node.m */,
-				2ACCAB2E1C80338F004B9831 /* TopT9Words.txt */,
-				2ACCAB2F1C80338F004B9831 /* Tree.h */,
-				2ACCAB301C80338F004B9831 /* Tree.m */,
-			);
-			path = Vocabulary;
 			sourceTree = "<group>";
 		};
 		2ACCAB351C8056AF004B9831 /* Models */ = {
@@ -252,6 +240,21 @@
 				2AD18F151C859DC700D1885C /* KBWatchDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		2AF75D241C85DF150027DB77 /* Vocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				2AF75D251C85DF150027DB77 /* FileReader.h */,
+				2AF75D261C85DF150027DB77 /* FileReader.m */,
+				2AF75D271C85DF150027DB77 /* Node.h */,
+				2AF75D281C85DF150027DB77 /* Node.m */,
+				2AF75D291C85DF150027DB77 /* Original_TopT9Words.txt */,
+				2AF75D2A1C85DF150027DB77 /* TopT9Words.txt */,
+				2AF75D2B1C85DF150027DB77 /* Tree.h */,
+				2AF75D2C1C85DF150027DB77 /* Tree.m */,
+			);
+			path = Vocabulary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +384,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF75D2F1C85DF150027DB77 /* Original_TopT9Words.txt in Resources */,
+				2AF75D301C85DF150027DB77 /* TopT9Words.txt in Resources */,
 				2ACCAAED1C803254004B9831 /* LaunchScreen.storyboard in Resources */,
 				2ACCAAEA1C803254004B9831 /* Assets.xcassets in Resources */,
 				2ACCAAE81C803254004B9831 /* Main.storyboard in Resources */,
@@ -408,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACCAB171C803254004B9831 /* Assets.xcassets in Resources */,
-				2ACCAB331C80338F004B9831 /* TopT9Words.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,8 +425,11 @@
 			files = (
 				2ACCAAE51C803254004B9831 /* ViewController.m in Sources */,
 				2ACCAAE21C803254004B9831 /* AppDelegate.m in Sources */,
+				2AF75D2D1C85DF150027DB77 /* FileReader.m in Sources */,
 				2ACCAADF1C803254004B9831 /* main.m in Sources */,
 				2AD18F161C859DC700D1885C /* KBWatchDelegate.m in Sources */,
+				2AF75D2E1C85DF150027DB77 /* Node.m in Sources */,
+				2AF75D311C85DF150027DB77 /* Tree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,11 +446,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACCAB381C8056C8004B9831 /* KBWordModel.m in Sources */,
-				2ACCAB341C80338F004B9831 /* Tree.m in Sources */,
 				2ACCAB151C803254004B9831 /* ExtensionDelegate.m in Sources */,
 				2ACCAB121C803254004B9831 /* InterfaceController.m in Sources */,
-				2ACCAB311C80338F004B9831 /* FileReader.m in Sources */,
-				2ACCAB321C80338F004B9831 /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
