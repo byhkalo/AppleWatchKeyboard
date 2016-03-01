@@ -108,7 +108,19 @@
                     </items>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
+                        <outlet property="abcButton" destination="CJn-2E-p8x" id="1su-o3-zSU"/>
+                        <outlet property="backSpaceButton" destination="3X7-Fd-dLZ" id="cdD-IF-ypN"/>
+                        <outlet property="defButton" destination="5kh-Tg-V6K" id="WuF-Tc-3vX"/>
+                        <outlet property="ghiButton" destination="Iv7-OK-gxR" id="a94-Gt-cL8"/>
+                        <outlet property="jklButton" destination="kdN-dv-SNx" id="4qy-b4-hyT"/>
+                        <outlet property="mnoButton" destination="BF1-ya-lef" id="bKJ-LF-TYW"/>
+                        <outlet property="pqrsButton" destination="SBv-Wz-0cN" id="4XW-m7-TRX"/>
+                        <outlet property="punctuationButton" destination="HzV-Y4-NJu" id="n9I-e5-RAm"/>
+                        <outlet property="sendButton" destination="yJv-SU-t9P" id="tqh-Zg-ndM"/>
+                        <outlet property="spaceButton" destination="wDK-do-QnG" id="Nut-kL-Gqk"/>
                         <outlet property="textLabel" destination="2EC-NH-r7f" id="5XS-wt-Gw8"/>
+                        <outlet property="tuvButton" destination="zl1-fJ-35s" id="8Nl-M0-YDB"/>
+                        <outlet property="wxyzButton" destination="zit-gd-MBj" id="RNR-RD-Bri"/>
                     </connections>
                 </controller>
             </objects>
