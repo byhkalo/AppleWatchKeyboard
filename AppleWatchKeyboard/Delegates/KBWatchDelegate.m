@@ -7,6 +7,11 @@
 //
 
 #import "KBWatchDelegate.h"
+#import "Tree.h"
+
+@interface KBWatchDelegate ()
+
+@end
 
 @implementation KBWatchDelegate
 
@@ -27,14 +32,8 @@
 #pragma mark WCSessionDelegate -
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message replyHandler:(void(^)(NSDictionary<NSString *, id> *replyMessage))replyHandler {
-    
-    
-    
-    NSInteger random = arc4random()%200;
-    NSString *stringRandom = [NSString stringWithFormat:@"%ld",(long)random];
-    replyHandler(@{@"word":stringRandom});
-    
-    NSLog(@"This method");
+    NSString *word = [[Tree getSharedInstance] getWordFromPattern:message[@"pattern"] andPredictionCount:(int)[message[@"predictionCount"] integerValue]];
+    replyHandler(@{@"word":word});
 }
 
 @end
